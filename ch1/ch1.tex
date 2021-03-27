@@ -1,0 +1,109 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{physics}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+\title{Chapter 1 Problems}
+\author{Jimmy Leta\\
+  Quantum Mechanics: The Theoretical Minimum}
+\maketitle
+
+\begin{problem}{1.1a}
+Using the axioms for inner products, prove
+\begin{align}
+  \{\bra{A} + \bra{B}\}\ket{C}=\bra{A}\ket{C} + \bra{B}\ket{C}.\label{prob1}
+\end{align}
+\begin{enumerate}
+  \item[] Axiom 1: Inner products are linear:
+  \begin{align*}
+    \bra{C}\{\ket{A} + \ket{B} \} = \bra{C}\ket{A} + \bra{C}\ket{B}
+  \end{align*} 
+  \item[] Axiom 2: Interchanging bras and kets corresponds to complex conjugation:
+  \begin{align*}
+    \bra{B}\ket{A} = \bra{A}\ket{B}^*
+   \end{align*} 
+\end{enumerate}
+\end{problem}
+
+\begin{proof}[Solution]
+  First from Axiom 2, we can rewrite the left hand side of (\ref{prob1}) as
+  \begin{align*}
+    \{\bra{A} + \bra{B}\}\ket{C} = \bra{C}\{\ket{A} + \ket{B}\}^*
+  \end{align*}
+  Next by Axiom 1, we know that $\bra{C}\{\ket{A} + \ket{B}\}^*$ can be rewritten as
+  \begin{align*}
+    \bra{C}\{\ket{A} + \ket{B}\}^* = \bra{C}\ket{A}^* + \bra{C}\ket{B}^*
+  \end{align*}
+  Then because by Axiom 2 we know that $\bra{C}\ket{A}^*=\bra{A}\ket{C}$ and 
+  $\bra{C}\ket{B}^*=\bra{B}\ket{C}$, from blank and blank, we can infer that
+  \begin{align*}
+    \{\bra{A} + \bra{B}\}\ket{C}=\bra{A}\ket{C} + \bra{B}\ket{C}
+  \end{align*}
+\end{proof}
+
+%
+
+\begin{problem}{1.1b}
+Prove $\bra{A}\ket{A}$ is a real number.
+\end{problem}
+
+\begin{proof}[Solution]
+  Let $\ket{A} = (a_1 + i b_1, a_2 + i b_2,\hdots, a_n + i b_n)$. By definition,
+  we know that $\bra{A} = (a_1 - i b_1, a_2 - i b_2,\hdots, a_n - i b_n)$.
+  Therefore, from the definition of $\bra{A}\ket{A}$, it follows that
+  \begin{align*}
+    \bra{A}\ket{A} = (a_1^2 + b_1^2) + (a_2^2 + b_2^2) +\hdots + (a_n^2 + b_n^2).
+  \end{align*}
+  Because $a_i$ and $b_i$ are all in $\mathbb{R}$, it follows that $\bra{A}\ket{A}\in\mathbb{R}$.
+\end{proof}
+
+\begin{problem}{1.2}
+Show that the inner product defined by Eq. 1.2 satisfies all the axioms of inner products.
+\end{problem}
+
+\begin{proof}[Solution]
+
+  \begin{align*}
+     \ket{A} &= \begin{bmatrix}
+      \alpha_{1} \\
+      \alpha_{2} \\
+      \vdots \\
+      \alpha_{n}
+    \end{bmatrix}
+  \end{align*}
+  \begin{align*}
+    \ket{B} &= \begin{bmatrix}
+     \beta_{1} \\
+     \beta_{2} \\
+     \vdots \\
+     \beta_{n}
+   \end{bmatrix}
+ \end{align*}
+ \begin{align*}
+  \ket{C} &= \begin{bmatrix}
+   \gamma_{1} \\
+   \gamma_{2} \\
+   \vdots \\
+   \gamma_{n}
+ \end{bmatrix}
+\end{align*}
+ \begin{align*}
+  \bra{B}\ket{A} &= (\beta_1^*, \beta_2^*, \hdots, \beta_n^*)\begin{bmatrix}
+   \alpha_{1} \\
+   \alpha_{2} \\
+   \vdots \\
+   \alpha_{n}
+ \end{bmatrix}
+\end{align*}
+\end{proof}
+
+\end{document}
